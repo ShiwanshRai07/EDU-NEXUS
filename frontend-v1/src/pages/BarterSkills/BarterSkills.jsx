@@ -9,7 +9,7 @@ const BarterSkills = () => {
   return (
     <div className="container">
       <h1>Barter Skills</h1>
-      <nav>
+      <nav className="nav-buttons">
         <button onClick={() => setActiveTab("live")} className={activeTab === "live" ? "active" : ""}>Live</button>
         <button onClick={() => setActiveTab("pre-recorded")} className={activeTab === "pre-recorded" ? "active" : ""}>Pre-Recorded</button>
         <button onClick={() => setActiveTab("requests")} className={activeTab === "requests" ? "active" : ""}>Requests</button>

@@ -24,6 +24,10 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: 4px solid #9a92f29e;
   }
+
+  .feature-img1{
+    height: 40px;;
+  }
   
   .feature-item p {
     width: 50%;
@@ -36,10 +40,10 @@
     flex-direction: row-reverse;
   }
 
-  .vertical-divider {
-    width: 2px;  /* Adjust thickness */
-    height: 300px; /* Adjust height */
-    background-color: #ccc; /* Line color */
-    margin: 0 auto; /* Centers it */
-  }
+  /* .vertical-divider {
+    width: 2px;  
+    height: 300px;  Adjust height 
+    background-color: #ccc;  Line color 
+    margin: 0 auto;  Centers it 
+  } */
   
