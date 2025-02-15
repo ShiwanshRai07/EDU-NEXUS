@@ -1,7 +1,10 @@
 // import routes
 import express from "express";
 import cors from "cors";
+import messageRouter from "./routes/messageRoutes.js";
 import getActiveSessionRoute from "./routes/liveVideoRoutes.js";
+import connectDb from "./database/dbConnect.js";
+import userRouter from "./routes/userRoutes.js";
 // db connect
 
 // express cors import and config
@@ -16,14 +19,16 @@ server.use(
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
-
+connectDb();
 server.use(express.json());
 
 //show routes
 // server.use("/route", <controller>)
 server.use("/live-meetings", getActiveSessionRoute);
 //
-server.get("/EDU-NEXUS", (req, res) => {
+server.use("/users", userRouter);
+server.use("/messages", messageRouter);
+server.get("/", (req, res) => {
   res.status(200).json({ message: "Server Running" });
 });
 
