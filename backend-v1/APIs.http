@@ -4,3 +4,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2IwO
 ###
 GET http://localhost:8080/messages/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2IwOGUyMmVhZGI4MjQ1MDI0OTAxOWMiLCJpYXQiOjE3Mzk2MjM5OTQsImV4cCI6MTczOTcxMDM5NH0.aBC9DVjQfrI19NJUi9Ch9ruMvW6p4w6MEusUI-wF0xo
+
+###
+GET http://localhost:8080/live-meetings
