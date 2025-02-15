@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Live.css";
-import live from '../../../assets/abc.jpg';
+// import live from "../../assets/abc.png";
 
 const LiveSessions = () => {
   const [liveSessions, setLiveSessions] = useState([]);

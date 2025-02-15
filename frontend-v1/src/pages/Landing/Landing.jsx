@@ -11,7 +11,7 @@ function Landing() {
   return (
     <div>
     <div className="hero-container">
-      <div className="hero-background"></div> Background Image
+      <div className="hero-background"></div>
       <Header />
       <HeroSection />
       </div>
