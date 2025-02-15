@@ -16,7 +16,7 @@ const LiveSessions = ({ refreshTrigger }) => {
       <h2>Live Sessions</h2>
       {liveSessions.length > 0 ? (
         liveSessions.map((session) => (
-          <div key={session.id} className="video-item">
+          <div key={session.sessionId} className="video-item">
             <img src="https://via.placeholder.com/150"  className="video-thumbnail" />
             <div className="video-info">
               <h3>{session.customRoomId}</h3>
