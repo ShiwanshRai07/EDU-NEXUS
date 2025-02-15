@@ -1,0 +1,67 @@
+.requests-section {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .post-request {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .post-request input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .post-request button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .post-request button:hover {
+    background-color: #0056b3;
+  }
+  
+  .requests-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .request-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .request-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: gray;
+  }
+  
+  .user {
+    font-weight: bold;
+  }
+  
+  .request-title {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  

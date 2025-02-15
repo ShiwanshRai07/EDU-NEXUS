@@ -1,0 +1,85 @@
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  nav button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    transition: background 0.3s ease;
+  }
+  
+  nav button.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  nav button:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .content {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .video-item,
+  .request-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+  }
+  
+  .video-item button {
+    padding: 5px 10px;
+    margin-top: 5px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .video-item button:hover {
+    background-color: #218838;
+  }
+  
+  .pre-recorded-section video {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 5px;
+  }
+  
+  .requests-section button {
+    padding: 10px 15px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .requests-section button:hover {
+    background-color: #c82333;
+  }
+  

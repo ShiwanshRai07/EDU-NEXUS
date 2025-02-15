@@ -1,0 +1,31 @@
+.moto-section {
+  background: linear-gradient(to top, #373468, #8E9FCD);
+
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+    gap: 1rem; /* Adds space between text and icon */
+    object-fit: cover;
+}
+
+.moto-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between text and icon */
+  background-color: #373468;
+}
+
+.moto-content img {
+  width: 300px; /* Adjust size as needed */
+  height: auto;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
