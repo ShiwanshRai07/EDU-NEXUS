@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import LiveMeetings from "./Live";
-import PreRecordedVideos from "./PreRecorded";
-import StudyRequests from "./RequestLesson";
+import LiveMeetings from "./Live.jsx";
+import PreRecordedVideos from "./PreRecorded.jsx";
+import StudyRequests from "./RequestLesson.jsx";
+import  "./BarterSkills.css";
 
 const BarterSkills = () => {
   const [activeTab, setActiveTab] = useState("live");
 
   return (
     <div className="container">
-      <h1>Barter Skills</h1>
+      <span id="yes">Barter Skills</span>
       <nav className="nav-buttons">
         <button onClick={() => setActiveTab("live")} className={activeTab === "live" ? "active" : ""}>Live</button>
         <button onClick={() => setActiveTab("pre-recorded")} className={activeTab === "pre-recorded" ? "active" : ""}>Pre-Recorded</button>
@@ -18,6 +19,7 @@ const BarterSkills = () => {
         {activeTab === "live" && <LiveMeetings />}
         {activeTab === "pre-recorded" && <PreRecordedVideos />}
         {activeTab === "requests" && <StudyRequests />}
+    
       </div>
     </div>
   );

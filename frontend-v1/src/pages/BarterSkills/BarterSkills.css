@@ -4,10 +4,15 @@
     text-align: center;
   }
   
-  h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+  span.yes{
+    font-size: 6rem;
+    margin: 20px;
+    color: #a09dc9f2;
+    font-weight: bolder;
+    transition: color 0.3s ease, transform 0.3s ease; /* Added transform transition */
   }
+  
+  
   
   nav {
     display: flex;
@@ -64,6 +69,8 @@
     background-color: #218838;
   }
   
+ 
+
   .pre-recorded-section video {
     width: 100%;
     max-width: 600px;
