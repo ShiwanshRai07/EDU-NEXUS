@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+import bcrypt from 'bcryptjs';
 const skillEnum = [
   "JavaScript",
   "Python",
@@ -10,7 +10,7 @@ const skillEnum = [
   "Data Science",
   "Cybersecurity",
   "Blockchain",
-  "Cloud Computing"
+  "Cloud Computing",
 ];
 
 const userSchema = new mongoose.Schema({
@@ -21,6 +21,18 @@ const userSchema = new mongoose.Schema({
   skills: { type: [String], enum: skillEnum, required: true }, // Skills must be from skillEnum
 });
 
+userSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) return next();
+  console.log(this.username);
+try {
+    const salt = await bcrypt.genSalt(12); // 12 rounds of salt
+    this.password = await bcrypt.hash(this.password, salt);
+    next();
+  
+} catch (error) {
+  console.log("error in userModel")
+  next(error);
+}});
 const User = mongoose.model("User", userSchema);
 
 export default User;

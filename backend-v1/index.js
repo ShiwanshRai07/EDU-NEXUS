@@ -4,7 +4,8 @@ import cors from "cors";
 import messageRouter from "./routes/messageRoutes.js";
 import getActiveSessionRoute from "./routes/liveVideoRoutes.js";
 import connectDb from "./database/dbConnect.js";
-import userRouter from "./routes/userRoutes.js";
+// import userRouter from "./routes/userRoutes.js";
+import authRouter from "./routes/authRoutes.js";
 // db connect
 
 // express cors import and config
@@ -26,12 +27,13 @@ server.use(express.json());
 // server.use("/route", <controller>)
 server.use("/live-meetings", getActiveSessionRoute);
 //
-server.use("/users", userRouter);
+// server.use("/users", userRouter);
 server.use("/messages", messageRouter);
 server.get("/", (req, res) => {
   res.status(200).json({ message: "Server Running" });
 });
 
+server.use("/me",authRouter);
 const PORT = 8080;
 server.listen(PORT, () => {
   console.log("Server STARTED at", PORT);
