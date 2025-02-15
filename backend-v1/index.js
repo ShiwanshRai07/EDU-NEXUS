@@ -6,6 +6,7 @@ import getActiveSessionRoute from "./routes/liveVideoRoutes.js";
 import connectDb from "./database/dbConnect.js";
 // import userRouter from "./routes/userRoutes.js";
 import authRouter from "./routes/authRoutes.js";
+import bookNotesRouter from "./routes/bookNotesRoutes.js";
 // db connect
 
 // express cors import and config
@@ -29,11 +30,13 @@ server.use("/live-meetings", getActiveSessionRoute);
 //
 // server.use("/users", userRouter);
 server.use("/messages", messageRouter);
+
+server.use("/me", authRouter);
+server.use("/books", bookNotesRouter);
+
 server.get("/", (req, res) => {
   res.status(200).json({ message: "Server Running" });
 });
-
-server.use("/me",authRouter);
 const PORT = 8080;
 server.listen(PORT, () => {
   console.log("Server STARTED at", PORT);
