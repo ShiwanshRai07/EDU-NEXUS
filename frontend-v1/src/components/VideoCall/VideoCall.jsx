@@ -42,9 +42,9 @@ export default function VideoCall({ meetingId, onMeetingCreated }) {
       meeting.init(config);
 
       // Notify parent component that the meeting was created
-      if (onMeetingCreated) {
-        onMeetingCreated(meetingId);
-      }
+      // if (onMeetingCreated) {
+      //   onMeetingCreated(meetingId);
+      // }
     };
 
     loadMeetingSDK();

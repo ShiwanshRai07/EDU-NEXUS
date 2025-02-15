@@ -8,6 +8,6 @@ import authenticateToken from "../utils/authUtils.js";
 const bookNotesRouter = express.Router();
 
 bookNotesRouter.post("/post", authenticateToken, postBookNote);
-bookNotesRouter.get("/notes", authenticateToken, getBookNotes); // Protect if needed
+bookNotesRouter.get("/", authenticateToken, getBookNotes); // Protect if needed
 
 export default bookNotesRouter;

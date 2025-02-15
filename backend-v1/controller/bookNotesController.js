@@ -1,4 +1,4 @@
-import BookNotes from "../Models/bookNotesModels.js";
+import bookNotesModel from "../Models/bookNotesModels.js";
 
 export const postBookNote = async (req, res) => {
   try {
@@ -17,7 +17,7 @@ export const postBookNote = async (req, res) => {
       return res.status(401).json({ error: "Unauthorized: Invalid token" });
     }
 
-    const newBookNote = new BookNotes({
+    const newBookNote = new bookNotesModel({
       noteBookName,
       noteBookLink,
       message,
@@ -34,7 +34,7 @@ export const postBookNote = async (req, res) => {
 
 export const getBookNotes = async (req, res) => {
   try {
-    const bookNotes = await BookNotes.find().populate("user", "username"); // Populate username of note creator
+    const bookNotes = await bookNotesModel.find().populate("user", "username"); // Populate username of note creator
 
     res.status(200).json({ success: true, bookNotes });
   } catch (error) {

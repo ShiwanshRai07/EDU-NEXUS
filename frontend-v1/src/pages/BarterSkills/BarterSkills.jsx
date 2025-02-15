@@ -1,28 +1,42 @@
-import React, { useState } from "react";
-import LiveMeetings from "./Live.jsx";
+import React, { useState, useEffect } from "react";
+import LiveSessions from "./Live.jsx";
+import CreateMeeting from "./CreateMeeting.jsx";
 import PreRecordedVideos from "./PreRecorded.jsx";
 import StudyRequests from "./RequestLesson.jsx";
-import  "./BarterSkills.css";
 
-const BarterSkills = () => {
-  const [activeTab, setActiveTab] = useState("live");
+const Dashboard = () => {
+  const [activeTab, setActiveTab] = useState("live"); // Default is "live"
+  const [showComponent, setShowComponent] = useState(true); // Initially true for LiveSessions
+
+  // Effect to hide LiveSessions when switching tabs
+  useEffect(() => {
+    if (activeTab !== "live") {
+      setShowComponent(false);
+    } else {
+      setShowComponent(true);
+    }
+  }, [activeTab]); // Runs whenever activeTab changes
 
   return (
-    <div className="container">
-      <span id="yes">Barter Skills</span>
-      <nav className="nav-buttons">
-        <button onClick={() => setActiveTab("live")} className={activeTab === "live" ? "active" : ""}>Live</button>
-        <button onClick={() => setActiveTab("pre-recorded")} className={activeTab === "pre-recorded" ? "active" : ""}>Pre-Recorded</button>
-        <button onClick={() => setActiveTab("requests")} className={activeTab === "requests" ? "active" : ""}>Requests</button>
-      </nav>
-      <div className="content">
-        {activeTab === "live" && <LiveMeetings />}
-        {activeTab === "pre-recorded" && <PreRecordedVideos />}
-        {activeTab === "requests" && <StudyRequests />}
-    
+    <div className="content">
+      {/* Tab Navigation */}
+      <div className="tabs">
+        <button onClick={() => setActiveTab("live")}>Live</button>
+        <button onClick={() => setActiveTab("pre-recorded")}>Pre-Recorded</button>
+        <button onClick={() => setActiveTab("requests")}>Requests</button>
       </div>
+
+      {/* Meeting Controls */}
+      <div>
+        {showComponent && <LiveSessions />}
+      </div>
+
+      {/* Conditional Rendering Based on Active Tab */}
+      {activeTab === "live" && <CreateMeeting />}
+      {activeTab === "pre-recorded" && <PreRecordedVideos />}
+      {activeTab === "requests" && <StudyRequests />}
     </div>
   );
 };
 
-export default BarterSkills;
+export default Dashboard;

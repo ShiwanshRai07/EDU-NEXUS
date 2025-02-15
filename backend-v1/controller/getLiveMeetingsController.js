@@ -30,7 +30,7 @@ async function liveVideoSessionController() {
     }
 
     const sessions = result.data; // Extract sessions
-    //console.log("Sessions:", sessions);
+    console.log("Sessions:", sessions);
 
     // Filter for active meetings (status === "ongoing")
     const activeMeetings = sessions
@@ -45,7 +45,7 @@ async function liveVideoSessionController() {
     // activeMeetings will be an empty array if no active meeting
     //
     //console.log("Active Meetings:", activeMeetings);
-    return activeMeetings;
+    return activeMeetings.length >0 ? activeMeetings: [];
     //res.status(200).json({ activeMeetings });
   } catch (error) {
     console.error("Error Fetching Sessions:", error.message);
