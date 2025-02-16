@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { VideoSDKMeeting } from "@videosdk.live/rtc-js-prebuilt/rtc-js-prebuilt";
+import logo from "../../assets/logo.png";
 
 export default function VideoCall({ meetingId, onMeetingCreated }) {
   const meetingContainerRef = useRef(null);
@@ -17,7 +18,7 @@ export default function VideoCall({ meetingId, onMeetingCreated }) {
         meetingId,
         apiKey,
         containerId: meetingContainerRef.current.id,
-        redirectOnLeave: "https://www.videosdk.live/",
+        redirectOnLeave: `${window.location.origin}/`,
         micEnabled: true,
         webcamEnabled: true,
         chatEnabled: true,
@@ -27,8 +28,8 @@ export default function VideoCall({ meetingId, onMeetingCreated }) {
         layout: { type: "SPOTLIGHT", priority: "PIN" },
         branding: {
           enabled: true,
-          logoURL: "https://static.zujonow.com/videosdk.live/videosdk_logo_circle_big.png",
-          name: "Prebuilt",
+          // logoURL: {logo},
+          name: "EDU-NEXUS",
           poweredBy: false,
         },
         permissions: {
@@ -49,8 +50,8 @@ export default function VideoCall({ meetingId, onMeetingCreated }) {
           endMeeting: true, // Can end meeting
           changeLayout: true, //can change layout
 },
-        joinScreen: { visible: true, title: "Daily scrum", meetingUrl },
-        leftScreen: { actionButton: { label: "Video SDK Live", href: "https://videosdk.live/" } },
+        joinScreen: { visible: true, title: "live session", meetingUrl },
+        leftScreen: { actionButton: { label: "EDU-NEXUS", href: "/" } },
         notificationSoundEnabled: true,
         debug: true,
         maxResolution: "hd",
@@ -67,6 +68,10 @@ export default function VideoCall({ meetingId, onMeetingCreated }) {
 
     loadMeetingSDK();
   }, [meetingId]);
+
+  navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+  .then((stream) => console.log("Camera access granted", stream))
+  .catch((error) => console.error("Camera access denied:", error));
 
   return <div id="meeting-container" ref={meetingContainerRef} style={{ width: "100%", height: "100vh" }} />;
 }

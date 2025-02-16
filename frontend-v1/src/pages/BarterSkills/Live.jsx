@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Live.css";
+import live from "../../assets/thumb.jpg";
 
 const LiveSessions = ({ refreshTrigger  , onJoinMeeting }) => {
   const [liveSessions, setLiveSessions] = useState([]);
@@ -17,7 +18,7 @@ const LiveSessions = ({ refreshTrigger  , onJoinMeeting }) => {
       {liveSessions.length > 0 ? (
         liveSessions.map((session) => (
           <div key={session.sessionId} className="video-item">
-            <img src="https://via.placeholder.com/150"  className="video-thumbnail" />
+            <img src={live}  className="video-thumbnail" />
             <div className="video-info">
               <h3>{session.customRoomId}</h3>
               <p>Host: {session.roomId}</p>
