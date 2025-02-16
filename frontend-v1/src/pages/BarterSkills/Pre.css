@@ -1,3 +1,6 @@
+body {
+  background-color: #39366a;
+}
 .video-section {
     width: 100%;
     max-width: 800px;
@@ -5,9 +8,12 @@
     padding: 20px;
   }
   
-  h2 {
-    font-size: 22px;
+  .meet{
+    font-size: 25px;
     margin-bottom: 15px;
+    color: #f1f1f7;
+    background-color: #635faa92;
+    text-align: center;
   }
   
   .video-item {
@@ -54,4 +60,6 @@
   .video-btn:hover {
     background-color: #cc0000;
   }
-  
+  .he{
+    color: white;
+  }

@@ -78,7 +78,7 @@ const BlurText = ({
   return (
     <p ref={ref} className={`blur-text ${className}`}>
       {springs.map((props, index) => (
-        <animated.span
+        <animated.span id="abc"
           key={index}
           style={{
             ...props,

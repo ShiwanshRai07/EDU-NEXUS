@@ -1,122 +1,115 @@
-.container {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  span.yes{
-    font-size: 6rem;
-    margin: 20px;
-    color: #a09dc9f2;
-    font-weight: bolder;
-    transition: color 0.3s ease, transform 0.3s ease; /* Added transform transition */
-  }
-  
-  
-  
-  nav {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  nav button {
-    padding: 10px 20px;
-    margin: 5px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    background-color: #f0f0f0;
-    transition: background 0.3s ease;
-  }
-  
-  nav button.active {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  nav button:hover {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .content {
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
-  
-  .video-item,
-  .request-item {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: white;
-  }
-  
-  .video-item button {
-    padding: 5px 10px;
-    margin-top: 5px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .video-item button:hover {
-    background-color: #218838;
-  }
-  
- 
 
-  .pre-recorded-section video {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 5px;
-  }
-  
-  .requests-section button {
-    padding: 10px 15px;
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  .requests-section button:hover {
-    background-color: #c82333;
-  }
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
 
-  .nav-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 20px 0;
-  }
-  
-  .nav-buttons button {
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: 600;
-    border: none;
-    border-radius: 25px;
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .nav-buttons button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-  }
-  
-  .nav-buttons button.active {
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }
-  
+.tabs button {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tabs button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.tabs button.active {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.video-item, .request-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+}
+
+
+.video-item button {
+  padding: 5px 10px;
+  margin-top: 5px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.video-item button:hover {
+  background-color: #218838;
+}
+
+
+.pre-recorded-section video {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 5px;
+}
+
+
+.requests-section button {
+  padding: 10px 15px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.requests-section button:hover {
+  background-color: #c82333;
+}
+
+
+.feature-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; 
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item img {
+  max-width: 150px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.feature-description {
+  flex: 1;
+  text-align: left;
+  padding: 0 20px;
+  font-size: 16px;
+  color: #333;
+} 
+
+#h1{
+  text-align: center;
+  color: #9A92F2;
+  margin: 20px;
+}

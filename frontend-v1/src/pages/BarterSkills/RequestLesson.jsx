@@ -23,7 +23,7 @@ const StudyRequests = () => {
 
   return (
     <div className="requests-section">
-      <h2>Study Requests</h2>
+      <h2 id="requests">Study Requests</h2>
       
       {/* Input Box for posting new requests */}
       <div className="post-request">
@@ -39,7 +39,7 @@ const StudyRequests = () => {
       {/* List of study requests */}
       <div className="requests-list">
         {requests.map((req) => (
-          <div key={req.id} className="request-item">
+          <div key={req.id} className="requestt-item">
             <div className="request-header">
               <span className="user">{req.user}</span>
               <span className="time">{req.time}</span>

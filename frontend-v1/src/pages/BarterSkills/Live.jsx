@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Live.css";
 
-const LiveSessions = ({ refreshTrigger }) => {
+const LiveSessions = ({ refreshTrigger  , onJoinMeeting }) => {
   const [liveSessions, setLiveSessions] = useState([]);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const LiveSessions = ({ refreshTrigger }) => {
   
   return (
     <div className="video-section">
-      <h2>Live Sessions</h2>
+      <h2 className="meet">Live Sessions</h2>
       {liveSessions.length > 0 ? (
         liveSessions.map((session) => (
           <div key={session.sessionId} className="video-item">
@@ -21,11 +21,17 @@ const LiveSessions = ({ refreshTrigger }) => {
             <div className="video-info">
               <h3>{session.customRoomId}</h3>
               <p>Host: {session.roomId}</p>
+              <button 
+                className="join-button"
+                onClick={() => onJoinMeeting(session.customRoomId)} // Navigate to VideoCall
+              >
+                Join Meeting
+              </button>
             </div>
           </div>
         ))
       ) : (
-        <p>No live sessions available.</p>
+        <p className="he">No live sessions available.</p>
       )}
     </div>
   );

@@ -13,7 +13,7 @@ const PreRecordedVideos = () => {
 
   return (
     <div className="video-section">
-      <h2>Pre-Recorded Videos</h2>
+      <h2 className="meet">Pre-Recorded Videos</h2>
       {videos.length > 0 ? (
         videos.map((video) => (
           <div key={video.id} className="video-item">
@@ -28,7 +28,7 @@ const PreRecordedVideos = () => {
           </div>
         ))
       ) : (
-        <p>No pre-recorded videos available.</p>
+        <p className="he">No pre-recorded videos available.</p>
       )}
     </div>
   );

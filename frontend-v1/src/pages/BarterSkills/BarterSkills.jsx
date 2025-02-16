@@ -3,10 +3,13 @@ import LiveSessions from "./Live.jsx";
 import CreateMeeting from "./CreateMeeting.jsx";
 import PreRecordedVideos from "./PreRecorded.jsx";
 import StudyRequests from "./RequestLesson.jsx";
+import VideoCall from "../../components/VideoCall/VideoCall.jsx";
+import "./BarterSkills.css"
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("live"); // Default is "live"
   const [showComponent, setShowComponent] = useState(true); // Initially true for LiveSessions
+  const [activeMeetingId, setActiveMeetingId] = useState(null);
 
   // Effect to hide LiveSessions when switching tabs
   useEffect(() => {
@@ -19,6 +22,7 @@ const Dashboard = () => {
 
   return (
     <div className="content">
+      <h1 id="h1">Barter Skills</h1>
       {/* Tab Navigation */}
       <div className="tabs">
         <button onClick={() => setActiveTab("live")}>Live</button>
@@ -27,10 +31,14 @@ const Dashboard = () => {
       </div>
 
       {/* Meeting Controls */}
-      <div>
-        {showComponent && <LiveSessions />}
-      </div>
-
+      {activeMeetingId ? (
+        // Render VideoCall if a meeting is active
+        <VideoCall meetingId={activeMeetingId} onLeaveMeeting={() => setActiveMeetingId(null)} />
+      ) : (
+        <div>
+          {showComponent && <LiveSessions onJoinMeeting={setActiveMeetingId} />}
+        </div>
+      )}
       {/* Conditional Rendering Based on Active Tab */}
       {activeTab === "live" && <CreateMeeting />}
       {activeTab === "pre-recorded" && <PreRecordedVideos />}

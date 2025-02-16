@@ -23,7 +23,7 @@ const CreateMeeting = () => {
     <div style={{ textAlign: "center", padding: "20px" }}>
       {!startMeeting ? (
         <div>
-          <h2>Create a New Meeting</h2>
+          <h2 className="meet">Create a New Meeting</h2>
           <input
             type="text"
             placeholder="Enter Meeting ID"
@@ -31,7 +31,7 @@ const CreateMeeting = () => {
             onChange={(e) => setMeetingId(e.target.value)}
             style={{ padding: "10px", marginRight: "10px" }}
           />
-          <button onClick={handleStartMeeting} style={{ padding: "10px 20px", cursor: "pointer" }}>
+          <button onClick={handleStartMeeting} style={{ padding: "10px 20px", cursor: "pointer", backgroundColor: "#75ec1f" }}>
             Start Meeting
           </button>
         </div>
