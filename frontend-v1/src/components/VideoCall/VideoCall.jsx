@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { VideoSDKMeeting } from "@videosdk.live/rtc-js-prebuilt/rtc-js-prebuilt";
-import logo from "../../assets/logo.png";
+
 
 export default function VideoCall({ meetingId, onMeetingCreated }) {
   const meetingContainerRef = useRef(null);
@@ -28,10 +28,11 @@ export default function VideoCall({ meetingId, onMeetingCreated }) {
         layout: { type: "SPOTLIGHT", priority: "PIN" },
         branding: {
           enabled: true,
-          // logoURL: {logo},
+          logoURL: "/logo.png",
           name: "EDU-NEXUS",
           poweredBy: false,
         },
+        
         permissions: {
           pin: true,
           askToJoin: false, // Ask joined participants for entry in meeting
@@ -72,6 +73,7 @@ export default function VideoCall({ meetingId, onMeetingCreated }) {
   navigator.mediaDevices.getUserMedia({ video: true, audio: true })
   .then((stream) => console.log("Camera access granted", stream))
   .catch((error) => console.error("Camera access denied:", error));
+
 
   return <div id="meeting-container" ref={meetingContainerRef} style={{ width: "100%", height: "100vh" }} />;
 }

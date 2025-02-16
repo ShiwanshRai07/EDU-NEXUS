@@ -1,16 +1,17 @@
 .moto-section {
   background: linear-gradient(to top, #373468, #8E9FCD);
 
-  color: #fff;
+  color: #ffffffe3;
   padding: 4rem 2rem;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
     gap: 1rem; /* Adds space between text and icon */
     object-fit: cover;
 }
+
+
 
 .moto-content {
   display: flex;
@@ -22,31 +23,31 @@
 .moto-content img {
   width: 300px; /* Adjust size as needed */
   height: auto;
+
 }
 
 h3 {
   font-size: 2rem;
-  font-weight: 700;
-  margin: 0;
-}
-
-.animated-gradient-text {
-  position: relative;
-  margin: 0 auto;
-  display: flex;
-  max-width: fit-content;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  border-radius: 1.25rem;
-  /* 20px */
   font-weight: 500;
-  backdrop-filter: blur(10px);
-  transition: box-shadow 0.5s ease-out;
-  overflow: hidden;
-  cursor: pointer;
+  margin: 20px;
+  padding: 10px;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b, #86dfe7, #d000ff);
+  background-size: 300% 100%;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animated-gradient 5s infinite linear;
 }
 
+@keyframes animated-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+  
+  
 .gradient-overlay {
   position: absolute;
   top: 0;
@@ -87,7 +88,7 @@ h3 {
   100% {
     background-position: 0% 50%;
   }
-}
+} */
 
 .text-content {
   display: inline-block;

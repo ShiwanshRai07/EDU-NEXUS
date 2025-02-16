@@ -1,5 +1,5 @@
 import './Moto.css';
-import icon from '../../assets/icon.png';
+import icon from '../../assets/exam.png';
   
 
  function GradientText({
@@ -36,8 +36,8 @@ const MotoSection = () => {
     <section className="moto-section">
       <div className="moto-content">
         <h3>
-          "Edu-Nexus is a one-stop, inclusive platform designed to break down financial
-          and resource barriers in education and skill development."
+        "Edu-Nexus: Bridging gaps in education by breaking barriers, 
+        <br />fostering global collaboration, and empowering learners with limitless opportunities <br /> to grow, connect, and thrive in a knowledge-driven world."
         </h3>
         <img src={icon} alt="icon" />
       </div>
